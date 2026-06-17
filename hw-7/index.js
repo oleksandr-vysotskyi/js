@@ -200,12 +200,20 @@ class Prince {
 const prince = new Prince('John', 24, 35);
 
 function findPrinceCinderella(cinderellasArr, prince) {
-    for (const cinderella of cinderellasArr) {
+    //via for
+    // for (const cinderella of cinderellasArr) {
+    //     if (cinderella.footSize === prince.foundShoeSize) {
+    //         prince.wife = cinderella;
+    //         return `${cinderella.name} matches with prince ${prince.name} and she wears ${prince.foundShoeSize} shoes`;
+    //     }
+    // }
+    //via forEach
+    cinderellasArr.forEach(cinderella => {
         if (cinderella.footSize === prince.foundShoeSize) {
             prince.wife = cinderella;
             return `${cinderella.name} matches with prince ${prince.name} and she wears ${prince.foundShoeSize} shoes`;
         }
-    }
+    })
     return 'Cinderella not found';
 }
 
