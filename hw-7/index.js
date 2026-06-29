@@ -226,17 +226,23 @@ console.log(prince);
 
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
-Array.prototype.myForEach = function (callback) {
-    for(const item of this) {
-        callback(item);
+// Array.prototype.myForEach = function (callback) {
+//     for(const item of this) {
+//         callback(item);
+//     }
+// }
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+Array.prototype.myForEach = function (callback, startIndex = 0) {
+    for (let i = startIndex; i < this.length; i++) {
+        callback(this[i], i, this);
     }
 }
-const arr = [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10];
-arr.myForEach(item => console.log(item));
+arr.myForEach(item => console.log(item), 5);
 
 Array.prototype.myFilter = function (callback) {
     const newArr = [];
-    for(const item of this) {
+    for (const item of this) {
         if (callback(item)) newArr.push(item);
     }
     return newArr;
