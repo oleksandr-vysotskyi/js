@@ -38,7 +38,7 @@ h2 {
     align-items: center;
 }
 
-.wrapper > h3, p {
+.wrapper > h3, .wrapper > p {
     width: 46%;
     height: 50px;
     margin-bottom: 25px;
