@@ -15,8 +15,11 @@ fetch('https://dummyjson.com/recipes')
             id.innerText = recipe.id;
             const name = document.createElement('p');
             name.innerText = recipe.name;
+            const img = document.createElement('img');
+            img.src = recipe.image;
+            img.alt = recipe.name;
             const list = document.createElement('ul');
-            article.append(id, name, list);
+            article.append(id, name, img, list);
             for (const ingredient of recipe.ingredients) {
                 const listItem = document.createElement('li');
                 listItem.innerText = ingredient;
